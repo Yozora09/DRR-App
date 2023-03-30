@@ -1,0 +1,7 @@
+{
+  "name": "DRR",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
