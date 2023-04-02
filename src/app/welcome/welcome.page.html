@@ -1,0 +1,30 @@
+<!-- Welcome Page -->
+
+<ion-content>
+  <div class="logo">
+    <img class="splashlogo" src="assets/logo/logo.png">
+  </div>
+  
+  <div class="container">
+    <div class="header">
+      <h1>Welcome to DRR App</h1>
+    </div>
+      
+    <div class="sub-header">
+      <p>An app designed to provide Disaster Risk Reduction information in accordance to
+        the Municipal Disaster Risk Reduction Management Office of Jaen.
+      </p>
+    </div>
+
+    <div class="buttons">
+      <div class="register">
+        <button class="register" [routerLink]="['/personal-info']">Register an Account</button>
+      </div>
+
+      <div>
+        <button class="login" [routerLink]="['/login']">Login</button>
+      </div>
+    </div>
+  </div>
+  
+</ion-content>

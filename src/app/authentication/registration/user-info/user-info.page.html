@@ -1,0 +1,54 @@
+<!-- Registration Page -->
+<!-- User Info Form -->
+
+<ion-content>
+  <div class="container">
+    <div class="back-button">
+      <img class="backBtn" src="assets/button/back-button.png"
+      [routerLink]="['/address']">
+    </div>
+
+    <div class="header1">
+      <h1>Fill out the form</h1>
+    </div>
+
+    <div class="sub-header">
+      <p>Enter your User Credentials to complete your registration.</p>
+    </div>
+
+    <div class="header2">
+      <h2>User Information</h2>
+    </div>
+
+    <div class="form">
+      <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <div class="address">      
+          <input class="input-input" type="text" placeholder=" "
+          ngModel name="userName" #usernameHandler="ngModel" required>
+          <label>Username</label>
+          <p class="errorMsg" *ngIf="usernameHandler.touched && !usernameHandler.valid">
+            Please enter your username.</p>
+
+        </div>
+
+        <div class="address">      
+          <input class="input-input" type="email" placeholder=" "
+          ngModel name="email" #emailHandler="ngModel" required>
+          <label>Email</label>
+          <p class="errorMsg" *ngIf="emailHandler.touched && !emailHandler.valid">
+            Please enter a valid email address.</p>
+        </div>
+
+        <div class="address">      
+          <input class="input-input" type="password" placeholder=" "
+          ngModel name="password" #passwordHandler="ngModel" required>
+          <label>Password</label>
+          <p class="errorMsg" *ngIf="passwordHandler.touched && !passwordHandler.valid">
+            Please enter your password.</p>
+        </div>
+
+        <ion-button class="reg-button" type="submit" [disabled]="!form.valid" >Register</ion-button>
+      </form>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,54 @@
+<!-- Registration Page -->
+<!-- Address Form -->
+
+<ion-content>
+  <div class="container">
+    <div class="back-button">
+      <img class="backBtn" src="assets/button/back-button.png"
+      [routerLink]="['/personal-info']">
+    </div>
+
+    <div class="header1">
+      <h1>Fill out the form</h1>
+    </div>
+
+    <div class="sub-header">
+      <p>Enter your Address in the fields provided below.</p>
+    </div>
+
+    <div class="header2">
+      <h2>Address</h2>
+    </div>
+
+    <div class="form">
+      <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <div class="address">      
+          <input class="input-input" type="text" placeholder=" "
+          ngModel name="barangay" #barangayHandler="ngModel" required>
+          <label>Barangay</label>
+          <p class="errorMsg" *ngIf="barangayHandler.touched && !barangayHandler.valid">
+            Please enter your barangay.</p>
+        </div>
+
+        <div class="address">      
+          <input class="input-input" type="text" placeholder=" "
+          ngModel name="street" #streetHandler="ngModel" required>
+          <label>Street/Purok</label>
+          <p class="errorMsg" *ngIf="streetHandler.touched && !streetHandler.valid">
+            Please enter your street.</p>
+        </div>
+
+        <div class="address">      
+          <input class="input-input" type="number" placeholder=" "
+          ngModel name="houseNo" #houseNoHandler="ngModel" required>
+          <label>House Number</label>
+          <p class="errorMsg" *ngIf="houseNoHandler.touched && !houseNoHandler.valid">
+            Please enter your house number.</p>
+        </div>
+
+        <ion-button class="next-button" type="submit" [disabled]="!form.valid" 
+        [routerLink]="['/user-info']">Next Step</ion-button>
+      </form>
+    </div>
+  </div>
+</ion-content>

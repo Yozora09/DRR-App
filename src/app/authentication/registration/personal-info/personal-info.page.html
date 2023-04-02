@@ -1,0 +1,65 @@
+<!-- Registration Page -->
+<!-- Personal Info Form -->
+
+<ion-content>
+  <div class="container">
+    <div class="back-button">
+      <img class="backBtn" src="assets/button/back-button.png"
+      [routerLink]="['/welcome']">
+    </div>
+
+    <div class="header1">
+      <h1>Fill out the form</h1>
+    </div>
+
+    <div class="sub-header">
+      <p>Enter your Personal Information to register.</p>
+    </div>
+
+    <div class="header2">
+      <h2>Personal Information</h2>
+    </div>
+
+    <div class="form">
+      <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <div class="personal-info">      
+          <input class="input-input" type="text" placeholder=" "
+          ngModel name="firstName" #firstNameHandler="ngModel" required>
+          <label>First Name</label>
+          <p class="errorMsg" *ngIf="firstNameHandler.touched && !firstNameHandler.valid">
+            Please enter your first name.</p>
+        </div>
+
+        <div class="personal-info">      
+          <input class="input-input" type="text" placeholder=" "
+          ngModel name="middleName" #middleNameHandler="ngModel">
+          <label>Middle Name</label>
+        </div>
+
+        <div class="personal-info">      
+          <input class="input-input" type="text" placeholder=" "
+          ngModel name="lastName" #lastNameHandler="ngModel" required>
+          <label>Last Name</label>
+          <p class="errorMsg" *ngIf="lastNameHandler.touched && !lastNameHandler.valid">
+            Please enter your last name.</p>
+        </div>
+
+        <div class="personal-info">     
+          <input class="input-input" type="date" placeholder=" "
+          ngModel name="birthDate" #birthdayHandler="ngModel" required>
+          <label>Date of Birth</label>
+        </div>
+
+        <div class="personal-info">      
+          <input class="input-input" type="number" placeholder=" "
+          ngModel name="contactNumber" #contactNumberHandler="ngModel" required>
+          <label>Contact Number</label>
+          <p class="errorMsg" *ngIf="contactNumberHandler.touched && !contactNumberHandler.valid">
+            Please enter your contact number.</p>
+        </div>
+        
+        <ion-button class="next-button" type="submit" [disabled]="!form.valid" [routerLink]="['/address']">Next Step</ion-button>
+      </form>
+    </div>
+  </div>
+</ion-content>

@@ -11,6 +11,34 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'welcome',
+    loadChildren: () => import('./welcome/welcome.module').then( m => m.WelcomePageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./authentication/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'personal-info',
+    loadChildren: () => import('./authentication/registration/personal-info/personal-info.module').then( m => m.PersonalInfoPageModule)
+  },
+  {
+    path: 'address',
+    loadChildren: () => import('./authentication/registration/address/address.module').then( m => m.AddressPageModule)
+  },
+  {
+    path: 'user-info',
+    loadChildren: () => import('./authentication/registration/user-info/user-info.module').then( m => m.UserInfoPageModule)
+  },
+  {
+    path: 'home-screen',
+    loadChildren: () => import('./home-screen/home-screen.module').then( m => m.HomeScreenPageModule)
+  },
+  {
+    path: 'confirmation',
+    loadChildren: () => import('./confirmation/confirmation.module').then( m => m.ConfirmationPageModule)
+  },
 ];
 
 @NgModule({
