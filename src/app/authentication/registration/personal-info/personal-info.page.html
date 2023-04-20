@@ -13,11 +13,11 @@
     </div>
 
     <div class="sub-header">
-      <p>Enter your Personal Information to register.</p>
+      <h2>Enter your Personal Information to register.</h2>
     </div>
 
     <div class="header2">
-      <h2>Personal Information</h2>
+      <h3>Personal Information</h3>
     </div>
 
     <div class="form">
@@ -25,7 +25,7 @@
         <div class="personal-info">      
           <input class="input-input" type="text" placeholder=" "
           ngModel name="firstName" #firstNameHandler="ngModel" required>
-          <label>First Name</label>
+          <label>First Name <i>(Pangalan)</i> <p class="req"> *</p></label>
           <p class="errorMsg" *ngIf="firstNameHandler.touched && !firstNameHandler.valid">
             Please enter your first name.</p>
         </div>
@@ -33,13 +33,13 @@
         <div class="personal-info">      
           <input class="input-input" type="text" placeholder=" "
           ngModel name="middleName" #middleNameHandler="ngModel">
-          <label>Middle Name</label>
+          <label>Middle Name <i>(Gitnang Pangalan)</i></label>
         </div>
 
         <div class="personal-info">      
           <input class="input-input" type="text" placeholder=" "
           ngModel name="lastName" #lastNameHandler="ngModel" required>
-          <label>Last Name</label>
+          <label>Last Name <i>(Apelyido)</i> <p class="req"> *</p></label>
           <p class="errorMsg" *ngIf="lastNameHandler.touched && !lastNameHandler.valid">
             Please enter your last name.</p>
         </div>
@@ -47,18 +47,23 @@
         <div class="personal-info">     
           <input class="input-input" type="date" placeholder=" "
           ngModel name="birthDate" #birthdayHandler="ngModel" required>
-          <label>Date of Birth</label>
+          <label>Date of Birth <i>(Petsa ng Kapanganakan)</i> <p class="req"> *</p></label>
         </div>
 
         <div class="personal-info">      
           <input class="input-input" type="number" placeholder=" "
           ngModel name="contactNumber" #contactNumberHandler="ngModel" required>
-          <label>Contact Number</label>
+          <label>Contact Number <i>(Kontak)</i> <p class="req"> *</p></label>
           <p class="errorMsg" *ngIf="contactNumberHandler.touched && !contactNumberHandler.valid">
             Please enter your contact number.</p>
         </div>
         
-        <ion-button class="next-button" type="submit" [disabled]="!form.valid" [routerLink]="['/address']">Next Step</ion-button>
+        <ion-button class="next-button" type="submit" [disabled]="!form.valid" 
+        [routerLink]="['/address']">Next Step</ion-button>
+
+        <div class="loginNow">
+          <p>Already have an account? <a [routerLink]="['/login']">Login Now</a></p>
+        </div>
       </form>
     </div>
   </div>

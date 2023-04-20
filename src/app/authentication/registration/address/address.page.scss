@@ -32,7 +32,7 @@ h1 {
     margin-top: 5%;
 }
 
-p {
+h2 {
     font-size: 20px;
     font-family: monospace;
     color: #4c4c4c;
@@ -43,7 +43,7 @@ p {
 }
 
 
-h2 {
+h3 {
     font-size: 20px;
     font-family: monospace;
     font-weight: bolder;
@@ -110,6 +110,8 @@ label {
 }
 
 .next-button {
+
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -120,7 +122,7 @@ label {
     border: none;
     background-color: #0d8713;
   
-    margin-top: 15%;
+    margin-top: 10%;
     left: 50%;
   
     width: 50%;
@@ -140,4 +142,15 @@ label {
     color: rgb(151, 8, 8);
     font-size: 15px;
     font-family: Tahoma;
+}
+
+.loginNow {
+    margin-top: 10%;
+    margin-left: 12%;
+    color: #4c4c4c;
+    
+}
+
+a {
+    color: #3b973e;
 }

@@ -34,6 +34,7 @@ export interface User {
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
   
     personalInfo : PersonalInfo = {
@@ -55,6 +56,7 @@ export class AuthService {
       email: "",
       password: ""
     }
+    
 
   constructor(private http: HttpClient) { }
 
@@ -85,8 +87,7 @@ export class AuthService {
     return this.user
   }
 
-
-  //for registration of email, pass
+  //for registration of email and password
   signUp(email: string, password: string) {
     return this.http.post<AuthResponseData>(
       `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.firebaseConfig.apiKey}`,
@@ -94,11 +95,13 @@ export class AuthService {
     );
   }
 
-  //for authentication of email, pass
+  //for authentication of email and password
   login(email: string, password: string) {
     return this.http.post(
       `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.firebaseConfig.apiKey}`,
       { email, password, returnSecureToken: true }
     );
   }
+
+  
 }

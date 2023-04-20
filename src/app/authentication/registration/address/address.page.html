@@ -13,41 +13,74 @@
     </div>
 
     <div class="sub-header">
-      <p>Enter your Address in the fields provided below.</p>
+      <h2>Enter your Address in the fields provided below.</h2>
     </div>
 
     <div class="header2">
-      <h2>Address</h2>
+      <h3>Address</h3>
     </div>
 
     <div class="form">
       <form #form="ngForm" (ngSubmit)="onSubmit(form)">
-        <div class="address">      
-          <input class="input-input" type="text" placeholder=" "
+        <div class="address">
+          <input class="input-input" onfocus="this.value=''" list="barangays" placeholder=" "
           ngModel name="barangay" #barangayHandler="ngModel" required>
-          <label>Barangay</label>
+          <label>Barangay <p class="req">*</p></label>
           <p class="errorMsg" *ngIf="barangayHandler.touched && !barangayHandler.valid">
             Please enter your barangay.</p>
+            <datalist id="barangays">
+              <option value="Calabasa">
+              <option value="Dampulan">
+              <option value="Don Mariano Marcos">
+              <option value="Hilera">
+              <option value="Imbunia">
+              <option value="Imelda Poblacion">
+              <option value="Lambakin">
+              <option value="Langla">
+              <option value="Magsalisi">
+              <option value="Malabon-Kaingin">
+              <option value="Marawa">
+              <option value="Niyugan">
+              <option value="Ocampo-Rivera">
+              <option value="Pakul">
+              <option value="Pamacpacan">
+              <option value="Pinanggaan">
+              <option value="Putlod">
+              <option value="San Jose">
+              <option value="San Josef">
+              <option value="San Pablo">
+              <option value="San Roque">
+              <option value="San Vicente">
+              <option value="Santa Rita">
+              <option value="Santo Tomas North">
+              <option value="Santo Tomas South">
+              <option value="Sapang">
+              <option value="Ulanin-Pitak">
+            </datalist>
         </div>
 
         <div class="address">      
           <input class="input-input" type="text" placeholder=" "
           ngModel name="street" #streetHandler="ngModel" required>
-          <label>Street/Purok</label>
+          <label>Street/Purok <p class="req">*</p></label>
           <p class="errorMsg" *ngIf="streetHandler.touched && !streetHandler.valid">
             Please enter your street.</p>
         </div>
 
         <div class="address">      
           <input class="input-input" type="number" placeholder=" "
-          ngModel name="houseNo" #houseNoHandler="ngModel" required>
+          ngModel name="houseNo" #houseNoHandler="ngModel">
           <label>House Number</label>
-          <p class="errorMsg" *ngIf="houseNoHandler.touched && !houseNoHandler.valid">
-            Please enter your house number.</p>
+          <!-- <p class="errorMsg" *ngIf="houseNoHandler.touched && !houseNoHandler.valid">
+            Please enter your house number.</p> -->
         </div>
 
         <ion-button class="next-button" type="submit" [disabled]="!form.valid" 
         [routerLink]="['/user-info']">Next Step</ion-button>
+
+        <div class="loginNow">
+          <p>Already have an account? <a [routerLink]="['/login']">Login Now</a></p>
+        </div>
       </form>
     </div>
   </div>

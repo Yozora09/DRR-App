@@ -30,9 +30,8 @@ ion-loading.custom-loading {
     --background: #fff;
     --spinner-color: #3b973e;
 
-    
     font-family: monospace;
-    font-size: 17px;
+    font-size: 20px;
     color: #3b973e;
 }
 
@@ -50,4 +49,32 @@ ion-button.login {
 
 ion-button {
     text-transform: none;
+}
+
+ion-tab-bar {
+    background-color: #fff;
+}
+
+ion-tab-button {
+    background-color: #fff;
+}
+
+ion-icon {
+    color: #3b973e;
+    font-size: 30px;
+}
+
+ion-label {
+    color: #3b973e;
+    font-weight: bold;
+
+    margin-top: 3%;
+
+    font-size: 15px;
+}
+
+p.req {
+    display: inline;
+    font-size: 16.5px;
+    color: rgb(151, 8, 8);
 }

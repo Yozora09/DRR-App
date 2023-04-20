@@ -18,20 +18,23 @@
         <div class="form">
             <form #form="ngForm" (ngSubmit)="onSubmit(form)">
                 <div class="login-info">      
-                    <input class="input-input" type="email" placeholder=" "
-                    ngModel name="email" #emailHandler="ngModel" required>
+                    <input class="input-input" type="email" placeholder=" "s
+                    ngModel name="email" #emailLoginHandler="ngModel" required>
                     <label>Email</label>
+                    <p class="errorMsg" *ngIf="emailLoginHandler.touched && !emailLoginHandler.valid">
+                    Please enter a valid email address.</p>
                 </div>
           
                 <div class="login-info">
-                    <input class="input-input" type="password" placeholder=" "
-                    ngModel name="password" #passwordHandler="ngModel">
+                    <input class="input-input" type="password" minlength="6" placeholder=" "
+                    ngModel name="password" #passwordLoginHandler="ngModel" required>
                     <label>Password</label>
+                    <p class="errorMsg" *ngIf="passwordLoginHandler.touched && !passwordLoginHandler.valid">
+                    Please enter your password and it must contain atleast 6 characters.</p>
                 </div>
 
-                <div>
-                    <ion-button class="login" type="submit" [disabled]="!form.valid">Login</ion-button>
-                </div>
+                <ion-button class="login" type="submit" [disabled]="!form.valid">Login</ion-button>
+                
                 <div class="signUp">
                     <p>New User? <a [routerLink]="['/personal-info']">Register Now</a></p>
                 </div>

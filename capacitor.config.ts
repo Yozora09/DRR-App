@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'DRR',
+  appId: 'com.mdrrmojaen.app',
+  appName: 'DRR App',
   webDir: 'www',
   bundledWebRuntime: false
 };

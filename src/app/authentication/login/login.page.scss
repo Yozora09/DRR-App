@@ -93,6 +93,12 @@ label {
     width: 50%;
 }
 
+.errorMsg {
+    color: rgb(151, 8, 8);
+    font-size: 15px;
+    font-family: Tahoma;
+}
+
 .login {
     display: flex;
     align-items: center;
@@ -130,14 +136,4 @@ label {
 
 a {
     color: #3b973e;
-}
-
-.type-toggle {
-    padding-inline-start: 0.5rem;
-}
-
-.show-option,
-    .hide-option {
-      font-size: 1.2rem;
-      display: block;
 }

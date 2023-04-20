@@ -1,0 +1,101 @@
+ion-content {
+    --ion-background-color: #fff;
+}
+
+.container {
+    padding: 40px;
+}
+
+.skip {
+    text-align: right;
+    
+    font-size: 25px;
+    font-family: Tahoma;
+    color: #0d8713;
+}
+
+.skip:active {
+    transform: translateY(2px);
+}
+
+.img1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 15%;
+}
+
+.img2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    margin-top: 5%;
+}
+
+.cyclone {
+    height: 130px;
+    width: 130px;
+}
+
+.eq {
+    height: 130px;
+    width: 130px;
+}
+
+.flood {
+    height: 130px;
+    width: 130px;
+}
+
+.text {
+    margin-top: 10%;
+}
+
+h1 {
+    text-align: center;
+
+    font-family: Tahoma;
+    font-weight: bold;
+    color: #4c4c4c;
+}
+
+p {
+    text-align: center;
+
+    font-size: 18px;
+    color: #4c4c4c;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 10%;
+    
+}
+
+.prev {
+    width: 50px;
+    height: 50px;
+}
+
+.prev:active {
+    transform: translateY(2px);
+}
+
+.progress {
+    width: 20px;
+    height: 20px;
+}
+
+.next {
+    width: 50px;
+    height: 50px;
+}
+
+.next:active{
+    transform: translateY(2px);
+}

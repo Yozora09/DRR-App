@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { AuthService} from '../../auth.service';
 import { User } from '../../user.model';
 
+
 import { LoadingController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
@@ -15,7 +16,12 @@ import { Router } from '@angular/router';
 })
 export class UserInfoPage implements OnInit {
 
-  constructor(private http: HttpClient, private authService: AuthService, private loadingCtrl: LoadingController, private router: Router) { }
+  constructor(
+    private http: HttpClient, 
+    private authService: AuthService, 
+    private loadingCtrl: LoadingController, 
+    private router: Router
+  ) { }
 
 
   //get all input values
@@ -54,7 +60,7 @@ export class UserInfoPage implements OnInit {
         email
         )
 
-      this.http.post('https://drr-app-c1c7e-default-rtdb.firebaseio.com/user.json',
+      this.http.post('https://drr-app-c1c7e-default-rtdb.firebaseio.com/users.json',
       newUser).subscribe();
       
       //loading duration
