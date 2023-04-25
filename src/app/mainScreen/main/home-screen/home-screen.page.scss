@@ -14,7 +14,7 @@ ion-content {
     margin-top: 5%;
 
     border: none;
-    border-radius: 25px;
+    border-radius: 15px;
     background-color: #fff;
     box-shadow: 0px 1px 8px 2px rgba(56,53,53,0.92);
 
@@ -27,37 +27,126 @@ h1 {
     color: #4c4c4c;
     font-family: monospace;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 18px;
 }
+
 
 h2 {
     color: #4c4c4c;
     font-family: monospace;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 12px;
 
     text-align: left;
 }
 
 p.date {
     color: #4c4c4c;
-    font-size: 17px;
+    font-size: 12px;
     text-align: left;
 }
 
 p.weather {
     color: #4c4c4c;
-    font-size: 17px;
+    font-size: 12px;
     text-align: right;
 }
 
 .box {
-    margin-top: 15%;
-
-    padding: 30px;
+    padding-top: 5px;
+    margin-top: 10%;
 
     background-color: #fff;
     border: none;
-    border-radius: 25px;
+    border-radius: 15px;
     box-shadow: 0px 1px 8px 2px rgba(56,53,53,0.92);
+}
+
+.info {
+    margin-top: 5%;
+
+    background: #e6e4e4;
+
+    padding: 10px;
+}
+
+.bar {
+    margin-top: 5%;
+
+    background: #e6e4e4;
+
+    padding: 10px;
+}
+
+label {
+    color: #4c4c4c;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 12px;
+
+    margin-left: 3%;
+}
+
+
+.content {
+    margin-top: 3%;
+
+    padding: 15px;
+}
+
+.dis1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dis2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.img {
+    width: 105px;
+    height: 105px;
+
+    animation: imgAnim 1s ease 1ms 1 normal forwards;
+}
+
+//disasters img animation
+@keyframes imgAnim {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.disasterInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+
+    padding: 10px;
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+
+    animation: logoAnim 1s ease 1ms 1 normal forwards;
+}
+
+//logo animation
+@keyframes logoAnim {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
 }

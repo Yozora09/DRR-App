@@ -70,6 +70,22 @@ const routes: Routes = [
   {
     path: 'flooding-page',
     loadChildren: () => import('./disasterPage/disasters/flooding-page/flooding-page.module').then( m => m.FloodingPagePageModule)
+  },
+  {
+    path: 'disaster-mainpage',
+    loadChildren: () => import('./disasterPage/disaster-mainpage/disaster-mainpage.module').then( m => m.DisasterMainpagePageModule)
+  },
+  {
+    path: 'drrmo-page',
+    loadChildren: () => import('./disasterPage/drrmo-page/drrmo-page.module').then( m => m.DrrmoPagePageModule)
+  },
+  {
+    path: 'profile-page',
+    loadChildren: () => import('./mainScreen/main/profile-page/profile-page.module').then( m => m.ProfilePagePageModule)
+  },
+  {
+    path: 'about-page',
+    loadChildren: () => import('./mainScreen/main/about-page/about-page.module').then( m => m.AboutPagePageModule)
   }
 ];
 

@@ -1,3 +1,143 @@
 ion-content {
-    --ion-background-color: #3b973e;
+    --ion-background-color: #fff;
+}
+
+.panel {
+    background: linear-gradient(146deg, #6dd871 25%, #40F353 51%, #13e513 70%);
+
+    padding: 30px;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    border-radius: 50%;
+    border: none;
+
+    width: 115px;
+    height: 115px;
+}
+
+.user {
+    display: flex;
+    align-items: start;
+
+    margin-top: -20%;
+}
+
+.frame {
+    padding: 25px;
+}
+
+.img {
+    background: #fff;
+    border: 3px solid #4c4c4c;
+    border-radius: 50%;
+    box-shadow: 0px 1px 2px 1px rgba(56,53,53,0.92);
+
+    width: 100px;
+    height: 100px;
+}
+
+
+p.userName {
+    color: #4c4c4c;
+
+    font-size: 20px;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+.myProfile {
+    margin-top: 10%;
+}
+
+.mypf {
+    color: #4c4c4c;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.profile {
+    display: flex;
+    border-radius: 10px;
+    background: #e6e4e4;
+    
+    margin-top: 5%;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.about {
+    display: flex;
+    border-radius: 10px;
+    background: #e6e4e4;
+    
+    margin-top: 8%;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.imgFrame {
+    display: flex;
+    background: #59cd5d;
+
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.profImg {
+    margin-left: 5%;
+    width: 25px;
+    height: 25px;
+}
+
+.aboutImg {
+    width: 25px;
+    height: 25px;
+}
+
+.lbl {
+    margin-top: 4.5%;
+    margin-left: 7%;
+
+    color: #4c4c4c;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.logoutBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    position: relative;
+    overflow: hidden;
+  
+    border: none;
+    background-color: #3b973e;
+  
+    margin-top: 30%;
+  
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    
+  
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.logoutBtn:active {
+    transform: translateY(2px);
 }

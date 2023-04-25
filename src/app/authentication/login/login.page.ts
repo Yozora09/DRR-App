@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertController, LoadingController } from '@ionic/angular';
 import { AuthService } from '../auth.service';
+import { MainService } from 'src/app/mainScreen/main/main.service';
 
 @Component({
   selector: 'app-login',
@@ -11,14 +12,21 @@ import { AuthService } from '../auth.service';
 })
 export class LoginPage implements OnInit {
   
-
-  constructor(private authService: AuthService, private router: Router, 
-    private loadingCtrl: LoadingController, private alertCtrl: AlertController) { }
+  constructor(
+    private authService: AuthService, 
+    private router: Router, 
+    private loadingCtrl: LoadingController, 
+    private alertCtrl: AlertController, 
+    private mainService:MainService
+  ) { }
 
   //login authentication
   async onSubmit(form:NgForm) {
     const {email,password} = form.value;
-    this.authService.login(email,password).subscribe(async res=>{
+    this.authService.login(email,password).subscribe(async (res: any)=>{
+      this.authService.setUserLocaId(res.localId)
+      this.mainService.fetchUsers()
+  
       //loading window
       const loading = await this.loadingCtrl.create({
         message: 'Logging in.',
@@ -31,7 +39,7 @@ export class LoginPage implements OnInit {
       //loading timeout duration
       setTimeout(()=>{
         this.loadingCtrl.dismiss();
-
+        
         form.onReset()
         this.router.navigateByUrl("/home-screen")
       },1500)
@@ -44,7 +52,7 @@ export class LoginPage implements OnInit {
 
         const {message} = error.error.error;
         if (message === 'EMAIL_NOT_FOUND') {
-          //email not found
+          //email not found alert
           const alert = await this.alertCtrl.create({
             header: 'Email Not Found!',
             message: 'Sorry, it seems like the email address you provided was not registered.',
@@ -55,7 +63,7 @@ export class LoginPage implements OnInit {
         }
 
         else if (message === 'INVALID_PASSWORD') {
-          //invalid password
+          //invalid password alert
           const alert = await this.alertCtrl.create({
             header: 'Invalid Password',
             message: 'Sorry, you have entered your password incorrectly.',
@@ -66,7 +74,7 @@ export class LoginPage implements OnInit {
         }
 
         else if (message === 'USER_DISABLED') {
-          //disabled
+          //user disabled alert
           const alert = await this.alertCtrl.create({
             header: 'Account Disabled',
             message: 'Sorry, this account has been disabled.',

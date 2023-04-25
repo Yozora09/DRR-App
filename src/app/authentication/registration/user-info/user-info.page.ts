@@ -4,10 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { AuthService} from '../../auth.service';
 import { User } from '../../user.model';
 
-
-import { LoadingController } from '@ionic/angular';
+import { AlertController, LoadingController } from '@ionic/angular';
 import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-user-info',
@@ -20,7 +18,8 @@ export class UserInfoPage implements OnInit {
     private http: HttpClient, 
     private authService: AuthService, 
     private loadingCtrl: LoadingController, 
-    private router: Router
+    private router: Router,
+    private alertCtrl: AlertController
   ) { }
 
 
@@ -43,7 +42,7 @@ export class UserInfoPage implements OnInit {
     loading.present();
 
     //storing input values to database
-    this.authService.signUp(email,password).subscribe( (response)=>{
+    this.authService.signUp(email,password).subscribe((response)=>{
       
       const id = response.localId
       const newUser = new User(
@@ -60,17 +59,20 @@ export class UserInfoPage implements OnInit {
         email
         )
 
-      this.http.post('https://drr-app-c1c7e-default-rtdb.firebaseio.com/users.json',
-      newUser).subscribe();
-      
-      //loading duration
-      setTimeout(()=>{
-        this.loadingCtrl.dismiss();
+        this.http.post('https://drr-app-c1c7e-default-rtdb.firebaseio.com/users.json',
+        newUser).subscribe()
+        
+        //loading duration
+        setTimeout(()=>{
+          this.loadingCtrl.dismiss();
 
-        form.onReset()
-        this.router.navigateByUrl('/confirmation');
-      },1500)
-    });
+          form.onReset()
+          this.router.navigateByUrl('/confirmation');
+        },1500)
+      }
+
+      //validate error message
+    )
   }
 
   ngOnInit() {

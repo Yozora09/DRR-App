@@ -1,0 +1,117 @@
+ion-content {
+    --ion-background-color: #fff;
+}
+
+.back {
+    position: absolute;
+
+    top: 20px;
+    left: 20px;
+}
+
+.backBtn {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+    box-shadow: 0px 1px 8px 2px rgba(56,53,53,0.92);
+}
+
+.backBtn:active {
+    background-color: #3b973e;
+    transform: translateY(2px);
+}
+
+.fld {
+    height: 370px;
+}
+
+.flooding {
+    position: absolute;
+
+    left: 20px;
+    top: 35%;
+}
+
+.icon {
+    width: 120px;
+    height: 120px;
+    
+    animation: iconAnim 2s ease 0s 1 normal forwards;
+}
+
+@keyframes iconAnim {
+	0%,
+	100% {
+		transform: rotate(0deg);
+		transform-origin: 50% 50%;
+	}
+
+	10% {
+		transform: rotate(8deg);
+	}
+
+	20%,
+	40%,
+	60% {
+		transform: rotate(-10deg);
+	}
+
+	30%,
+	50%,
+	70% {
+		transform: rotate(10deg);
+	}
+
+	80% {
+		transform: rotate(-8deg);
+	}
+
+	90% {
+		transform: rotate(8deg);
+	}
+}
+
+.label {
+    position: absolute;
+
+    left: 10%;
+    top: 36.4%;
+}
+
+p.label {
+    margin-top: 2%;
+    margin-left: 18%;
+    background: #365f99;
+    border: none;
+    border-radius: 0px 50px 50px 0px;
+    box-shadow: 0px 1px 8px 2px rgba(56,53,53,0.92);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 65%;
+    height: 10%;
+    padding: 10px;
+
+    color: #fff;
+    font-weight: bold;
+    font-size: 23px;
+
+    text-align: center;
+
+    animation: labelAnim 1s ease 0s 1 normal forwards;
+}
+
+@keyframes labelAnim {
+	0% {
+		transform: scaleX(0.4);
+		transform-origin: 0% 0%;
+	}
+
+	100% {
+		transform: scaleX(1);
+		transform-origin: 0% 0%;
+	}
+}

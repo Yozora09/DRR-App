@@ -36,6 +36,8 @@ export interface User {
 })
 
 export class AuthService {
+
+  userLocalId = "";
   
     personalInfo : PersonalInfo = {
       firstName: "",
@@ -101,6 +103,14 @@ export class AuthService {
       `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.firebaseConfig.apiKey}`,
       { email, password, returnSecureToken: true }
     );
+  }
+
+  setUserLocaId(id:string){
+    this.userLocalId = id;
+  }
+
+  getUserLocalId(){
+    return this.userLocalId;
   }
 
   

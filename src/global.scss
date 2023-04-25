@@ -47,6 +47,14 @@ ion-button.login {
     --background: #bbcdbc;;
 }
 
+ion-button.logoutBtn {
+    --background: #d23939;
+}
+
+ion-button.updateBtn {
+    --background: #3b973e;
+}
+
 ion-button {
     text-transform: none;
 }
@@ -77,4 +85,17 @@ p.req {
     display: inline;
     font-size: 16.5px;
     color: rgb(151, 8, 8);
+}
+
+p.info{
+    display: inline;
+    color: #3b973e;
+    margin-left: 20%;
+}
+
+
+p.disaster {
+    display: inline;
+    color: #3b973e;
+    margin-left: 27%;
 }

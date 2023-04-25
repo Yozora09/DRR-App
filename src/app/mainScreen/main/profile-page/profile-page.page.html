@@ -1,0 +1,100 @@
+<!-- Profile Page -->
+
+<ion-content>
+  <div class="container">
+    <div class="backBtn" routerLink="/account-page">
+      <img class="button" src="assets/button/backBtn.png">
+    </div>
+
+    <div class="header">
+      <h1 class="edit">Edit Profile</h1>
+    </div>
+
+    <div class="form">
+      <form #form="ngForm">
+        <div class="profile">      
+          <input class="input-input" type="text" placeholder=" "
+          ngModel name="firstName" #firstNameHandler="ngModel" required>
+          <label>First Name</label>
+          <p class="errorMsg" *ngIf="firstNameHandler.touched && !firstNameHandler.valid">
+            Please enter your first name.</p>
+        </div>
+
+        <div class="profile">      
+          <input class="input-input" type="text" placeholder=" "
+          ngModel name="middleName" #middleNameHandler="ngModel">
+          <label>Middle Name</label>
+        </div>
+
+        <div class="profile">      
+          <input class="input-input" type="text" placeholder=" "
+          ngModel name="lastName" #lastNameHandler="ngModel" required>
+          <label>Last Name</label>
+          <p class="errorMsg" *ngIf="lastNameHandler.touched && !lastNameHandler.valid">
+            Please enter your last name.</p>
+        </div>
+
+        <div class="profile">     
+          <input class="input-input" type="date" placeholder=" "
+          ngModel name="birthDate" #birthdayHandler="ngModel" required>
+          <label>Date of Birth</label>
+        </div>
+
+        <div class="profile">      
+          <input class="input-input" type="number" placeholder=" "
+          ngModel name="contactNumber" #contactNumberHandler="ngModel" required>
+          <label>Contact Number</label>
+          <p class="errorMsg" *ngIf="contactNumberHandler.touched && !contactNumberHandler.valid">
+            Please enter your contact number.</p>
+        </div>
+
+        <div class="profile">
+          <input class="input-input" onfocus="this.value=''" list="barangays" placeholder=" "
+          ngModel name="barangay" #barangayHandler="ngModel" required>
+          <label>Barangay</label>
+          <p class="errorMsg" *ngIf="barangayHandler.touched && !barangayHandler.valid">
+            Please enter your barangay.</p>
+            <datalist id="barangays">
+              <option value="Calabasa">
+              <option value="Dampulan">
+              <option value="Don Mariano Marcos">
+              <option value="Hilera">
+              <option value="Imbunia">
+              <option value="Imelda Poblacion">
+              <option value="Lambakin">
+              <option value="Langla">
+              <option value="Magsalisi">
+              <option value="Malabon-Kaingin">
+              <option value="Marawa">
+              <option value="Niyugan">
+              <option value="Ocampo-Rivera">
+              <option value="Pakul">
+              <option value="Pamacpacan">
+              <option value="Pinanggaan">
+              <option value="Putlod">
+              <option value="San Jose">
+              <option value="San Josef">
+              <option value="San Pablo">
+              <option value="San Roque">
+              <option value="San Vicente">
+              <option value="Santa Rita">
+              <option value="Santo Tomas North">
+              <option value="Santo Tomas South">
+              <option value="Sapang">
+              <option value="Ulanin-Pitak">
+            </datalist>
+        </div>
+
+        <div class="profile">      
+          <input class="input-input" type="text" placeholder=" "
+          ngModel name="street" #streetHandler="ngModel" required>
+          <label>Street/Purok</label>
+          <p class="errorMsg" *ngIf="streetHandler.touched && !streetHandler.valid">
+            Please enter your street.</p>
+        </div>
+
+          <ion-button class="updateBtn" type="submit" [disabled]="!form.valid">Update</ion-button>
+      </form>
+    </div>
+  </div>
+</ion-content>

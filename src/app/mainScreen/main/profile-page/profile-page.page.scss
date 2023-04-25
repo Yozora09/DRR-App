@@ -1,0 +1,119 @@
+ion-content {
+    --ion-background-color: #fff;
+}
+
+.container {
+    padding: 25px;
+}
+
+.backBtn {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+}
+
+.backBtn:active {
+    background-color: #3b973e;
+    transform: translateY(2px);
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: -4%; 
+}
+
+h1.edit {
+    color: #4c4c4c;
+    font-weight: bold;
+}
+
+.profile { 
+    position: relative; 
+    margin-bottom: 20px; 
+    margin-top: 10%;
+
+    color: #000;
+}
+
+.input-input , .input-select {
+    font-size: 18px;
+    padding: 4px 4px;
+    display: block;
+    width: 100%;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #757575;
+}
+  
+.input-input:focus , .input-select:focus {
+    outline: none;
+    border-bottom: 2px solid #3b973e; 
+}
+  
+label {
+    color: #000; 
+    font-size: 16.5px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 5px;
+    transition: 0.2s ease all; 
+    -moz-transition: 0.2s ease all; 
+    -webkit-transition: 0.2s ease all;
+}
+  
+.input-input:focus ~ label, .input-input:not(:placeholder-shown) ~ label {
+    top: -18px;
+    font-size: 15px;
+    color: #3b973e;
+}
+  
+.input-select:focus ~ label , .input-select:not([value=""]):valid ~ label {
+    top: -18px;
+    font-size: 15px;
+    color: #3b973e;
+}
+  
+/* active state */
+.input-input:focus ~ .bar:before, .input-input:focus ~ .bar:after, .input-select:focus ~ .bar:before, 
+.input-select:focus ~ .bar:after {
+    width: 50%;
+}
+
+.errorMsg {
+    color: rgb(151, 8, 8);
+    font-size: 15px;
+    font-family: Tahoma;
+}
+
+.updateBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    position: relative;
+    overflow: hidden;
+  
+    border: none;
+    background-color: #3b973e;
+  
+    margin-top: 15%;
+  
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    
+  
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.updateBtn:active {
+    transform: translateY(2px);
+}

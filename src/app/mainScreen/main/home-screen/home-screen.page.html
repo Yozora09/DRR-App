@@ -4,14 +4,34 @@
 
   <div class="container">
     <div class="header">
-      <h1>Mabuhay</h1>
+      <h1>Mabuhay (Name)!</h1>
       <h2>Today</h2>
       <p class="date">{{getCurrentDate}}</p>
-      <p class="weather">Placeholder: Weather API</p>
     </div>
 
     <div class="box">
-      <img src="assets/disaster/cyclone.png">
+      <div class="info" routerLink="/drrmo-page">
+        <label>Municipal DRRMO Jaen<p class="info">More info ></p></label>
+      </div>
+
+      <div class="disasterInfo" routerLink="/drrmo-page">
+        <img class="logo" src="assets/logo/logo.png">
+      </div>
+
+      <div class="bar" routerLink="/disaster-mainpage">
+        <label>3 MAJOR DISASTERS <p class="disaster">More info ></p></label>
+      </div>
+
+      <div class="content" routerLink="/disaster-mainpage">
+        <div class="dis1">
+          <img class="img" src="assets/disaster/cyclone.png">
+        </div>
+        
+        <div class="dis2">
+          <img class="img"src="assets/disaster/earthquake.png">
+          <img class="img" src="assets/disaster/flood.png">
+        </div>
+      </div>
     </div>
   </div>
 </ion-content>
