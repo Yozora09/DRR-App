@@ -14,7 +14,7 @@
       <form #form="ngForm" (ngSubmit)="onSubmit(form)">
         <div class="profile">      
           <input class="input-input" type="text" placeholder=" "
-          ngModel name="firstName" #firstNameHandler="ngModel"  required>
+          ngModel name="firstName" #firstNameHandler="ngModel" ngModel={{user.firstName}} required>
           <label>First Name</label>
           <p class="errorMsg" *ngIf="firstNameHandler.touched && !firstNameHandler.valid">
             Please enter your first name.</p>
