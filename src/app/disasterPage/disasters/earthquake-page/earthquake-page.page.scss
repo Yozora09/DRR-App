@@ -25,7 +25,7 @@ ion-content {
 	position: absolute;
   
 	top: 20px;
-	left: 77%;
+	left: 77.5%;
   }
   
   .ntc {
@@ -132,6 +132,7 @@ p.label {
     font-size: 23px;
 
     text-align: center;
+    text-shadow: 0px 0px 10px rgba(56,53,53,0.92);
 
     animation: labelAnim 1s ease 0s 1 normal forwards;
 }
@@ -251,4 +252,82 @@ input:checked {
     max-height: 100vh;
     padding: 1em;
   }
+}
+
+.tbl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+tr {
+  border: 1px solid #4c4c4c;
+}
+
+th {
+  background: #e9e8e8;
+  border: 1px solid #4c4c4c;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  text-align: center;
+}
+
+td {
+  border: 1px solid #4c4c4c;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.is1 {
+  text-align: center;
+}
+
+.is2 {
+  text-align: center;
+  background: #dfe6fe;
+}
+
+.is3 {
+  text-align: center;
+  background: #82f9fb;
+}
+
+.is4 {
+  text-align: center;
+  background: #7efbdf;
+}
+
+.is5 {
+  text-align: center;
+  background: #95f879;
+}
+
+.is6 {
+  text-align: center;
+  background: #f7f835;
+}
+
+.is7 {
+  text-align: center;
+  background: #fdca2c;
+}
+
+.is8 {
+  text-align: center;
+  background: #ff701f ;
+}
+
+.is9 {
+  text-align: center;
+  background: #ec2516;
+}
+
+.is10 {
+  text-align: center;
+  background: #c81e11;
 }

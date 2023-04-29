@@ -99,12 +99,14 @@ export class MainService {
     contactNumber: number,
     barangay: string,
     street: string,
-    houseNo: number,
-    userName: string,
-    email: string
+
   ) {
 
+    const user = this.getCurrentUser();
+    console.log(user);
+
     const newUser = {
+      id:user.id,
       firstName:firstName,
       middleName:middleName,
       lastName: lastName,
@@ -112,13 +114,13 @@ export class MainService {
       contactNumber: contactNumber,
       barangay: barangay,
       street: street,
-      houseNo: houseNo,
-      userName: userName,
-      email: email
+      houseNo: user.houseNo,
+      userName: user.userName,
+      email: user.email
     }
 
     console.log(newUser)
-    this.http.put(`https://drr-app-c1c7e-default-rtdb.firebaseio.com/users/${this.documentId}.json`,{...newUser}).subscribe();
+    this.http.put(`https://drr-app-c1c7e-default-rtdb.firebaseio.com/users/${this.documentId}.json`,newUser).subscribe();
   }
 
   getCurrentUser(){

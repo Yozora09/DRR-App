@@ -12,7 +12,10 @@ export const environment = {
     storageBucket: "drr-app-c1c7e.appspot.com",
     messagingSenderId: "882884152025",
     appId: "1:882884152025:web:3055788a5a817c0c190cc8"
-  }
+  },
+  weatherApiKey: '1908cd09ca14832b8d3449c0222b8797',
+  
+  weatherApiUrl: 'https://api.openweathermap.org/data/3.0/'
 };
 
 /*

@@ -86,6 +86,34 @@ const routes: Routes = [
   {
     path: 'about-page',
     loadChildren: () => import('./mainScreen/main/about-page/about-page.module').then( m => m.AboutPagePageModule)
+  },
+  {
+    path: 'cycloneprep',
+    loadChildren: () => import('./disasterPage/TODO/cycloneprep/cycloneprep.module').then( m => m.CycloneprepPageModule)
+  },
+  {
+    path: 'earthquakeprep',
+    loadChildren: () => import('./disasterPage/TODO/earthquakeprep/earthquakeprep.module').then( m => m.EarthquakeprepPageModule)
+  },
+  {
+    path: 'floodingprep',
+    loadChildren: () => import('./disasterPage/TODO/floodingprep/floodingprep.module').then( m => m.FloodingprepPageModule)
+  },
+  {
+    path: 'fire-page',
+    loadChildren: () => import('./disasterPage/disasters/fire-page/fire-page.module').then( m => m.FirePagePageModule)
+  },
+  {
+    path: 'landslide-page',
+    loadChildren: () => import('./disasterPage/disasters/landslide-page/landslide-page.module').then( m => m.LandslidePagePageModule)
+  },
+  {
+    path: 'hotlines',
+    loadChildren: () => import('./disasterPage/hotlines/hotlines.module').then( m => m.HotlinesPageModule)
+  },
+  {
+    path: 'others',
+    loadChildren: () => import('./disasterPage/others/others.module').then( m => m.OthersPageModule)
   }
 ];
 

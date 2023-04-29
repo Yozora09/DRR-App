@@ -17,7 +17,6 @@ export class AccountPagePage implements OnInit {
     this.user = this.mainService.getCurrentUser();
     this.mainService.fetchUsers();
     // this.mainService.updateUser();
-  
 
   }
 

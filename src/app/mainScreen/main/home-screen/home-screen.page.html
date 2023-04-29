@@ -4,9 +4,18 @@
 
   <div class="container">
     <div class="header">
-      <h1>Mabuhay (Name)!</h1>
-      <h2>Today</h2>
-      <p class="date">{{getCurrentDate}}</p>
+      <div class="weather">
+        <h1>Mabuhay {{user.firstName}}</h1>
+        <img [src]='icon'>
+        <p class="temp">{{weatherData?.temp}}°C</p>
+        <p class="cond">{{weatherData?.weather[0]?.main}}</p>
+      </div>
+      
+      <div class="weather">
+        <h2>Today</h2>
+        <p class="date">{{getCurrentDate}}</p>
+        <p>Jaen, Nueva Ecija</p>
+      </div>
     </div>
 
     <div class="box">

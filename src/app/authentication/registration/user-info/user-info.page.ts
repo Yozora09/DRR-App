@@ -39,10 +39,10 @@ export class UserInfoPage implements OnInit {
       cssClass: 'custom-loading',
     });
 
-    loading.present();
-
+    
     //storing input values to database
     this.authService.signUp(email,password).subscribe((response)=>{
+    loading.present();
       
       const id = response.localId
       const newUser = new User(
@@ -69,9 +69,36 @@ export class UserInfoPage implements OnInit {
           form.onReset()
           this.router.navigateByUrl('/confirmation');
         },1500)
+      },
+
+      async (error: {error: {error : {message: any} } }) => {
+        this.authService.login(email, password);
+
+        const {message} = error.error.error;
+        if (message === 'EMAIL_EXISTS') {
+          //email not found alert
+          const alert = await this.alertCtrl.create({
+            header: 'Email Exists!',
+            message: 'The email address is already in use by another account.',
+            buttons: ['OK'],
+          });
+      
+          await alert.present();
+        }
+
+        else if (message === 'TOO_MANY_ATTEMPTS_TRY_LATER') {
+          //invalid password alert
+          const alert = await this.alertCtrl.create({
+            header: 'Too Many Attempts!',
+            message: 'We have blocked all requests from this device due to unusual activity.',
+            buttons: ['OK'],
+          });
+      
+          await alert.present();
+        }
       }
 
-      //validate error message
+      
     )
   }
 

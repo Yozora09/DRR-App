@@ -21,7 +21,10 @@ ion-content {
     padding: 15px;
     padding-top: 5px;
     padding-bottom: 5px;
+
+    column-count: 2;
 }
+
 
 h1 {
     color: #4c4c4c;
@@ -46,10 +49,28 @@ p.date {
     text-align: left;
 }
 
-p.weather {
+.weather {
+    
+}
+
+p.temp {
+    position: absolute;
+    color: #4c4c4c;
+    font-size: 20px;
+    display: inline;
+
+    font-weight: bold;
+
+    top: 13%;
+}
+
+p.cond {
     color: #4c4c4c;
     font-size: 12px;
-    text-align: right;
+    display: inline;
+    position: absolute;
+
+    top: 18.5%;
 }
 
 .box {
