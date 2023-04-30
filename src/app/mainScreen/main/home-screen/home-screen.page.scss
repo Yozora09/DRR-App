@@ -26,11 +26,11 @@ ion-content {
 }
 
 
-h1 {
+p.greet {
     color: #4c4c4c;
     font-family: monospace;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 
@@ -49,8 +49,8 @@ p.date {
     text-align: left;
 }
 
-.weather {
-    
+.icon {
+    border: none;
 }
 
 p.temp {
@@ -73,9 +73,14 @@ p.cond {
     top: 18.5%;
 }
 
+p.prov {
+    color: #4c4c4c;
+    font-size: 12px;
+}
+
 .box {
     padding-top: 5px;
-    margin-top: 10%;
+    margin-top: 5%;
 
     background-color: #fff;
     border: none;

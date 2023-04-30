@@ -28,6 +28,7 @@ export class ProfilePagePage implements OnInit {
     this.user = this.mainService.getCurrentUser();
     this.mainService.fetchUsers();
   }
+  
   update(){
     this.mainService.fetchUsers();
   

@@ -114,6 +114,22 @@ const routes: Routes = [
   {
     path: 'others',
     loadChildren: () => import('./disasterPage/others/others.module').then( m => m.OthersPageModule)
+  },
+  {
+    path: 'volcanic',
+    loadChildren: () => import('./disasterPage/disasters/volcanic/volcanic.module').then( m => m.VolcanicPageModule)
+  },
+  {
+    path: 'fireprep',
+    loadChildren: () => import('./disasterPage/TODO/fireprep/fireprep.module').then( m => m.FireprepPageModule)
+  },
+  {
+    path: 'landslideprep',
+    loadChildren: () => import('./disasterPage/TODO/landslideprep/landslideprep.module').then( m => m.LandslideprepPageModule)
+  },
+  {
+    path: 'volcanicprep',
+    loadChildren: () => import('./disasterPage/TODO/volcanicprep/volcanicprep.module').then( m => m.VolcanicprepPageModule)
   }
 ];
 

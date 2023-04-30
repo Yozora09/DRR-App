@@ -13,7 +13,7 @@
     <div class="form">
       <form #form="ngForm" (ngSubmit)="onSubmit(form)">
         <div class="profile">      
-          <input class="input-input" type="text" placeholder=" "
+          <input class="input-input" type="text" onfocus="this.value=''" placeholder=" "
           ngModel name="firstName" #firstNameHandler="ngModel" ngModel={{user.firstName}} required>
           <label>First Name</label>
           <p class="errorMsg" *ngIf="firstNameHandler.touched && !firstNameHandler.valid">
@@ -21,14 +21,14 @@
         </div>
 
         <div class="profile">      
-          <input class="input-input" type="text" placeholder=" "
-          ngModel name="middleName" #middleNameHandler="ngModel">
+          <input class="input-input" type="text" onfocus="this.value=''" placeholder=" "
+          ngModel name="middleName" #middleNameHandler="ngModel" ngModel={{user.middleName}}>
           <label>Middle Name</label>
         </div>
 
         <div class="profile">      
-          <input class="input-input" type="text" placeholder=" "
-          ngModel name="lastName" #lastNameHandler="ngModel" required>
+          <input class="input-input" type="text" onfocus="this.value=''" placeholder=" "
+          ngModel name="lastName" #lastNameHandler="ngModel" ngModel={{user.lastName}} required>
           <label>Last Name</label>
           <p class="errorMsg" *ngIf="lastNameHandler.touched && !lastNameHandler.valid">
             Please enter your last name.</p>
@@ -36,13 +36,13 @@
 
         <div class="profile">     
           <input class="input-input" type="date" placeholder=" "
-          ngModel name="birthDate" #birthdayHandler="ngModel" required>
+          ngModel name="birthDate" #birthdayHandler="ngModel" ngModel={{user.birthDate}} required>
           <label>Date of Birth</label>
         </div>
 
         <div class="profile">      
-          <input class="input-input" type="number" placeholder=" "
-          ngModel name="contactNumber" #contactNumberHandler="ngModel" required>
+          <input class="input-input" type="number" onfocus="this.value=''" placeholder=" "
+          ngModel name="contactNumber" #contactNumberHandler="ngModel" ngModel={{user.contactNumber}} required>
           <label>Contact Number</label>
           <p class="errorMsg" *ngIf="contactNumberHandler.touched && !contactNumberHandler.valid">
             Please enter your contact number.</p>
@@ -50,7 +50,7 @@
 
         <div class="profile">
           <input class="input-input" onfocus="this.value=''" list="barangays" placeholder=" "
-          ngModel name="barangay" #barangayHandler="ngModel" required>
+          ngModel name="barangay" #barangayHandler="ngModel" ngModel={{user.barangay}} required>
           <label>Barangay</label>
           <p class="errorMsg" *ngIf="barangayHandler.touched && !barangayHandler.valid">
             Please enter your barangay.</p>
@@ -86,14 +86,14 @@
         </div>
 
         <div class="profile">      
-          <input class="input-input" type="text" placeholder=" "
-          ngModel name="street" #streetHandler="ngModel" required>
+          <input class="input-input" type="text" onfocus="this.value=''" placeholder=" "
+          ngModel name="street" #streetHandler="ngModel" ngModel={{user.street}} required>
           <label>Street/Purok</label>
           <p class="errorMsg" *ngIf="streetHandler.touched && !streetHandler.valid">
             Please enter your street.</p>
         </div>
 
-          <ion-button class="updateBtn" type="submit" (click)="update()" [disabled]="!form.valid">Update</ion-button>
+          <ion-button class="updateBtn" type="submit" [disabled]="!form.valid">Update</ion-button>
       </form>
     </div>
   </div>

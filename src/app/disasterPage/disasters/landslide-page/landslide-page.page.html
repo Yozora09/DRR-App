@@ -1,9 +1,117 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>landslide-page</ion-title>
-  </ion-toolbar>
-</ion-header>
+
+<!-- LANDSLIDE Page -->
 
 <ion-content>
+  <div class="container">
+    <div class="cover">
+      <div class="back" routerLink="/others">
+        <img class="backBtn" src="assets/button/bckBtn.png">
+      </div>
 
+      <div>
+        <img class="land" src="assets/disaster/landslide.jpg">
+      </div>
+
+      <div class="notice" routerLink="/landslideprep">
+        <img class="ntc" src="assets/disaster/notice5.png">
+      </div>
+
+      <div class="lbl">
+        <p class="label">Landslides</p>
+      </div>
+
+      <div class="lands">
+        <img class="icon" src="assets/disaster/landslide.png">
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="desc">
+        <p>
+          A landslide is the mass movement of rock, soil, and debris down a slope due to 
+          gravity. It occurs when the driving force is greater than the resisting force. 
+          It is a natural process that occurs in steep slopes. The movement may range from 
+          very slow to rapid. It can affect areas both near and far from the source.
+        </p>
+        <p>
+          Landslide materials may include:
+          <li>Soil</li>
+          <li>Debris</li>
+          <li>Rock</li>
+          <li>Garbage</li>
+        </p>
+      </div>
+
+      <div class="accordion">
+        <div class="tabs">
+          <div class="tab">
+            <input type="checkbox" id="chck1">
+            <label class="tab-label" for="chck1">Landslides Triggers</label>
+
+            <div class="tab-content">
+              <li>Natural triggers</li>
+              <li>Intense rainfall</li>
+              <li>Weathering rocks</li>
+              <li>Ground vibrations created during earthquakes</li>
+              <li>Volcanic activity</li>
+              <li>Man-made triggers</li>
+            </div>
+          </div>
+        </div>
+
+        <div class="tabs">
+          <div class="tab">
+            <input type="checkbox" id="chck2">
+            <label class="tab-label" for="chck2">Landslide Triggering Conditions</label>
+
+            <div class="tab-content">
+              <li>Steep slopes</li>
+              <li>Weakening of slope material</li>
+              <li>Weathering of rocks</li>
+              <li>Overloading on the slope</li>
+            </div>
+          </div>
+        </div>
+
+        <div class="tabs">
+          <div class="tab">
+            <input type="checkbox" id="chck3">
+            <label class="tab-label" for="chck3">Modes of Failure</label>
+
+            <div class="tab-content">
+              <div class="text">
+                Movement can occur in many ways. It can be a <b>fall</b>, <b>topple</b>, <b>slide</b>, <b>spread</b>, 
+                or <b>flow</b>.
+              </div>
+            </div>
+
+            <div class="tab-content">
+              <b>FALL</b>
+              <img class="img" src="assets/disaster/fall.jpg">
+            </div>
+
+            <div class="tab-content">
+              <b>TOPPLE</b>
+              <img class="img" src="assets/disaster/topple.jpg">
+            </div>
+
+            <div class="tab-content">
+              <b>SLIDE</b>
+              <img class="img" src="assets/disaster/slide.jpg">
+            </div>
+
+            <div class="tab-content">
+              <b>SPREAD</b>
+              <img src="assets/disaster/spread.jpg">
+            </div>
+
+            <div class="tab-content">
+              <b>FLOW</b>
+              <img class="img" src="assets/disaster/flow.jpg">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </ion-content>

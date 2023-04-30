@@ -55,7 +55,7 @@ export class HomeScreenPage implements OnInit {
       )
       .subscribe((data: any) => {
         this.weatherData = data.current;
-        this.icon =  "https://openweathermap.org/img/wn/"+this.weatherData.weather[0].icon+"@2x.png";
+        this.icon = "https://openweathermap.org/img/wn/"+this.weatherData.weather[0].icon+"@2x.png";
       });
   }
 }

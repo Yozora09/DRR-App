@@ -86,6 +86,10 @@ label {
     width: 50%;
 }
 
+input[type=date]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
 .errorMsg {
     color: rgb(151, 8, 8);
     font-size: 15px;
