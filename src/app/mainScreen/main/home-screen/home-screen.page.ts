@@ -42,6 +42,14 @@ export class HomeScreenPage implements OnInit {
     this.user = this.mainService.getCurrentUser();
     this.getWeatherDetails();
   }
+  async ionViewWillEnter() {
+    await this.mainService.fetchUsers();
+    this.user = await this.mainService.getCurrentUser();
+  }
+  async ionViewDidEnter() {
+    await this.mainService.fetchUsers();
+    this.user = await this.mainService.getCurrentUser();
+  }
   
 
   getWeatherDetails() {

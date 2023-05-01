@@ -34,10 +34,16 @@ export class AccountPagePage implements OnInit {
   }
 
   ngOnInit() {
-    this.user = this.mainService.getCurrentUser();
     this.mainService.fetchUsers();
-    // this.mainService.updateUser();
-
+    this.user = this.mainService.getCurrentUser();
+  }
+  async ionViewWillEnter() {
+    await this.mainService.fetchUsers();
+    this.user = await this.mainService.getCurrentUser();
+  }
+  async ionViewDidEnter() {
+    await this.mainService.fetchUsers();
+    this.user = await this.mainService.getCurrentUser();
   }
 
 }

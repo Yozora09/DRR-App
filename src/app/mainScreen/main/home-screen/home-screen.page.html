@@ -6,7 +6,7 @@
     <div class="header">
       <div class="weather">
         <img class="icon" [src]='icon'>
-        <p class="greet">Mabuhay !</p>
+        <p class="greet">Mabuhay {{user ? user.firstName : ""}}!</p>
 
         <div class="weather">
           <p class="temp">{{weatherData?.temp}}°C</p>

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { AuthService } from 'src/app/authentication/auth.service';
 import { User } from 'src/app/authentication/user.model';
 
@@ -21,8 +22,8 @@ export interface Info {
 })
 
 export class MainService {
-  users:User[] = []
-  documentId = ""
+  users = new BehaviorSubject<User[]>([]);
+  documentId = '';
 
 
   info : Info = {
@@ -51,44 +52,45 @@ export class MainService {
     return this.info
   }
 
-  fetchUsers(){
-    this.http.get('https://drr-app-c1c7e-default-rtdb.firebaseio.com/users.json').subscribe((data:any)=>{
-      
-      for(const user in data){
-        const firstName = data[user].firstName
-        const middleName = data[user].middleName
-        const lastName = data[user].lastName
-        const birthDate = data[user].birthDate
-        const contactNumber = data[user].contactNumber
-        const barangay = data[user].barangay
-        const street = data[user].street
-        const houseNo = data[user].houseNo
-        const userName = data[user].userName
-        const email = data[user].email
-        const id = data[user].id
+  fetchUsers() {
+    this.http
+      .get('https://drr-app-c1c7e-default-rtdb.firebaseio.com/users.json')
+      .subscribe((data: any) => {
+        const allUser = [];
+        for (const user in data) {
+          const firstName = data[user].firstName;
+          const middleName = data[user].middleName;
+          const lastName = data[user].lastName;
+          const birthDate = data[user].birthDate;
+          const contactNumber = data[user].contactNumber;
+          const barangay = data[user].barangay;
+          const street = data[user].street;
+          const houseNo = data[user].houseNo;
+          const userName = data[user].userName;
+          const email = data[user].email;
+          const id = data[user].id;
 
-        if (id === this.authService.getUserLocalId()) {
-          this.documentId = user
+          if (id === this.authService.getUserLocalId()) {
+            this.documentId = user;
+          }
+
+          const users = new User(
+            id,
+            firstName,
+            middleName,
+            lastName,
+            birthDate,
+            contactNumber,
+            barangay,
+            street,
+            houseNo,
+            userName,
+            email
+          );
+          allUser.push(users);
         }
-
-        const allUser = new User(
-          id,
-          firstName,
-          middleName,
-          lastName,
-          birthDate,
-          contactNumber,
-          barangay,
-          street,
-          houseNo,
-          userName,
-          email
-          )
-
-        this.users.push(allUser);
-
-      }
-    })
+        this.users.next(allUser);
+      });
   }
 
   updateUser(
@@ -102,7 +104,6 @@ export class MainService {
   ) {
 
     const user = this.getCurrentUser();
-    console.log(user);
 
     const newUser = {
       id:user.id,
@@ -118,14 +119,13 @@ export class MainService {
       email: user.email
     }
 
-    console.log(newUser)
     this.http.put(`https://drr-app-c1c7e-default-rtdb.firebaseio.com/users/${this.documentId}.json`,newUser).subscribe();
   }
 
   getCurrentUser(){
     const userLocalId = this.authService.getUserLocalId()
-    const currentUser = this.users.filter(user=>
-      user.id === userLocalId
+    const currentUser = this.users.value.filter(users=>
+      users.id === userLocalId
     )[0];
     return currentUser;
   }
