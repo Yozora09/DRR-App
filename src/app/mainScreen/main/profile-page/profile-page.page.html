@@ -13,7 +13,7 @@
     <div class="form">
       <form #form="ngForm" (ngSubmit)="onSubmit(form)">
         <div class="profile">      
-          <input class="input-input" type="text" onfocus="this.value=''" placeholder=" "
+          <input class="input-input" type="text" placeholder=" "
           ngModel name="firstName" #firstNameHandler="ngModel" ngModel={{user.firstName}} required>
           <label>First Name</label>
           <p class="errorMsg" *ngIf="firstNameHandler.touched && !firstNameHandler.valid">
@@ -21,13 +21,13 @@
         </div>
 
         <div class="profile">      
-          <input class="input-input" type="text" onfocus="this.value=''" placeholder=" "
+          <input class="input-input" type="text" placeholder=" "
           ngModel name="middleName" #middleNameHandler="ngModel" ngModel={{user.middleName}}>
           <label>Middle Name</label>
         </div>
 
         <div class="profile">      
-          <input class="input-input" type="text" onfocus="this.value=''" placeholder=" "
+          <input class="input-input" type="text" placeholder=" "
           ngModel name="lastName" #lastNameHandler="ngModel" ngModel={{user.lastName}} required>
           <label>Last Name</label>
           <p class="errorMsg" *ngIf="lastNameHandler.touched && !lastNameHandler.valid">
@@ -41,7 +41,7 @@
         </div>
 
         <div class="profile">      
-          <input class="input-input" type="number" onfocus="this.value=''" placeholder=" "
+          <input class="input-input" type="number" placeholder=" "
           ngModel name="contactNumber" #contactNumberHandler="ngModel" ngModel={{user.contactNumber}} required>
           <label>Contact Number</label>
           <p class="errorMsg" *ngIf="contactNumberHandler.touched && !contactNumberHandler.valid">
@@ -86,7 +86,7 @@
         </div>
 
         <div class="profile">      
-          <input class="input-input" type="text" onfocus="this.value=''" placeholder=" "
+          <input class="input-input" type="text" placeholder=" "
           ngModel name="street" #streetHandler="ngModel" ngModel={{user.street}} required>
           <label>Street/Purok</label>
           <p class="errorMsg" *ngIf="streetHandler.touched && !streetHandler.valid">

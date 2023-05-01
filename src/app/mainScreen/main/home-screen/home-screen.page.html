@@ -5,16 +5,19 @@
   <div class="container">
     <div class="header">
       <div class="weather">
-        <p class="greet">Mabuhay</p>
-        <!-- <img class="icon" [src]='icon'>
-        <p class="temp">{{weatherData?.temp}}°C</p>
-        <p class="cond">{{weatherData?.weather[0]?.main}}</p> -->
+        <img class="icon" [src]='icon'>
+        <p class="greet">Mabuhay !</p>
+
+        <div class="weather">
+          <p class="temp">{{weatherData?.temp}}°C</p>
+          <p class="cond">{{weatherData?.weather[0]?.main}}</p>
+        </div>
+        <p class="prov">Jaen, Nueva Ecija</p>
       </div>
       
       <div class="time">
         <h2>Today</h2>
         <p class="date">{{getCurrentDate}}</p>
-        <p class="prov">Jaen, Nueva Ecija</p>
       </div>
     </div>
 

@@ -21,8 +21,6 @@ ion-content {
     padding: 15px;
     padding-top: 5px;
     padding-bottom: 5px;
-
-    column-count: 2;
 }
 
 
@@ -38,45 +36,64 @@ h2 {
     color: #4c4c4c;
     font-family: monospace;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 25px;
 
-    text-align: left;
+    position: absolute;
+
+    top: 4.8%;
+    left: 67%;
 }
 
 p.date {
     color: #4c4c4c;
-    font-size: 12px;
+    font-size: 14px;
     text-align: left;
+
+    position: absolute;
+
+    top: 11%;
+    left: 67%;
 }
 
 .icon {
-    border: none;
+    position: absolute;
+
+    top: 8%;
+    left: 7%;
 }
 
 p.temp {
     position: absolute;
+
     color: #4c4c4c;
     font-size: 20px;
-    display: inline;
 
     font-weight: bold;
 
-    top: 13%;
+    top: 9%;
+    left: 32%;
 }
 
 p.cond {
-    color: #4c4c4c;
-    font-size: 12px;
-    display: inline;
     position: absolute;
 
-    top: 18.5%;
+    color: #4c4c4c;
+    font-size: 13px;
+    display: inline;
+
+    top: 14%;
+    left: 32%;
 }
 
 p.prov {
     color: #4c4c4c;
-    font-size: 12px;
+    font-size: 14px;
+
+
+    margin-top: 20%;
 }
+
+
 
 .box {
     padding-top: 5px;

@@ -99,7 +99,6 @@ export class MainService {
     contactNumber: number,
     barangay: string,
     street: string,
-
   ) {
 
     const user = this.getCurrentUser();

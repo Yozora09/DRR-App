@@ -17,6 +17,20 @@ ion-content {
 .splashlogo {
   width: 245px;
   height: 250px;
+
+  animation: logoAnim 2s ease 0s normal forwards;
+}
+
+@keyframes logoAnim {
+	0% {
+		opacity: 0;
+		transform: rotate(-540deg) scale(0);
+	}
+
+	100% {
+		opacity: 1;
+		transform: rotate(0) scale(1);
+	}
 }
 
 .button {

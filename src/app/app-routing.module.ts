@@ -130,6 +130,10 @@ const routes: Routes = [
   {
     path: 'volcanicprep',
     loadChildren: () => import('./disasterPage/TODO/volcanicprep/volcanicprep.module').then( m => m.VolcanicprepPageModule)
+  },
+  {
+    path: 'gobagprep',
+    loadChildren: () => import('./disasterPage/TODO/gobagprep/gobagprep.module').then( m => m.GobagprepPageModule)
   }
 ];
 
