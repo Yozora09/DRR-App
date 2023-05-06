@@ -29,7 +29,7 @@ export class AccountPagePage implements OnInit {
     setTimeout(()=>{
       this.loadingCtrl.dismiss();
       
-      this.router.navigateByUrl("/welcome")
+      this.router.navigateByUrl("/login")
     },1500)
   }
 
